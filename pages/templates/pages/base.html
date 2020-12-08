@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>FEEDSEEK | Hunger Free Future</title>
+    <link ref="icon" href="{ % static 'website/image/favicon.ioc %'}">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Bootsrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css'%}">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css'%}">
+
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.css'%}">
+
+    <!-- Template main Css -->
+    <link rel="stylesheet" href="{% static 'website/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'users/main.css'%}">
+
+    <!-- Modernizr -->
+    <script src="{% static 'website/js/modernizr-2.6.2.min.js'%}"></script>
+
+
+</head>
+
+<body>
+
+
+    <header class="main-header">
+
+
+        <nav class="navbar navbar-static-top">
+
+            <div class="navbar-top">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-6 col-xs-12">
+
+                            <ul class="list-unstyled list-inline header-contact">
+                                <li> <i class="fa fa-phone"></i> <a href="tel:">+212 658 986 213 </a> </li>
+                                <li> <i class="fa fa-envelope"></i> <a
+                                        href="mailto:contact@feedseek.org">contact@feedseek.org</a> </li>
+                            </ul> <!-- /.header-contact  -->
+
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 text-right">
+
+                            <ul class="list-unstyled list-inline header-social">
+
+                                <li> <a href="#"> <i class="fa fa-facebook"></i> </a> </li>
+                                <li> <a href="#"> <i class="fa fa-twitter"></i> </a> </li>
+                                <li> <a href="#"> <i class="fa fa-google"></i> </a> </li>
+                                <li> <a href="#"> <i class="fa fa-youtube"></i> </a> </li>
+                                <li> <a href="#"> <i class="fa fa fa-pinterest-p"></i> </a> </li>
+                            </ul> <!-- /.header-social  -->
+
+                        </div>
+
+
+                    </div> <!-- /class=row  -->
+                </div> <!-- /Container  -->
+
+            </div> <!-- /navbar_top  -->
+
+            <div class="navbar-main">
+
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+
+                        </button>
+
+                        <a class="navbar-brand" href="{% url 'index'%}"><img
+                                src="{% static 'website/images/Flogo.png'%}" alt=""></a>
+
+
+                    </div>
+
+
+                    <div id="navbar" class="navbar-collapse collapse pull-left">
+
+                        <ul class="nav navbar-nav">
+                            {% if user.is_authenticated %}
+                            <li><a class="is-active" href="{% url 'home'%}">HOME</a></li>
+                            <li><a href="{% url 'about'%}">ABOUT</a></li>
+
+                            <li><a href="{% url 'gallery'%}">GALLERY</a></li>
+                            <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                            <li><a href="{% url 'contact'%}">DONATE</a></li>
+
+                            {% else %}
+
+                            <li><a class="is-active" href="{% url 'index'%}">HOME</a></li>
+                            <li><a href="{% url 'about'%}">ABOUT</a></li>
+
+                            <li><a href="{% url 'gallery'%}">GALLERY</a></li>
+                            <li><a href="{% url 'contact'%}">CONTACT</a></li>
+                            <li><a href="{% url 'contact'%}">DONATE</a></li>
+                            {% endif %}
+                        </ul>
+
+
+                    </div> <!-- /#navbar -->
+                    <div id="navbar" class="navbar-collapse collapse pull-right">
+                        <ul class="nav navbar-nav">
+
+                            {% if user.is_authenticated %}
+                            <li class="has-child"><a href="#">
+                            <li>{{ user.username }}</a>
+
+                                <ul class="submenu">
+                                    <li class="submenu-item"><a href="{% url 'profile' %}">Profile</a></li>
+                                    <li class="submenu-item"><a href="#">Notification</a></li>
+                                    <li class="submenu-item"><a href="{% url 'logout' %}">Log out</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a class="navbar-brand">|</a></li>
+                            <li><a href="{% url 'donate_food' %}">DONATE</a></li>
+                            {% else %}</li>
+
+                            <li><a href="{% url 'login' %}">LOG IN</a></li>
+                            <li><a class="navbar-brand">|</a></li>
+                            <li><a href="{% url 'register' %}">SIGN UP</a></li>
+
+
+                            {% endif %}
+
+                        </ul>
+
+                    </div>
+
+
+                </div> <!-- /.container -->
+
+            </div> <!-- /.navbar-main -->
+
+
+        </nav>
+
+    </header>
+
+
+    <div class="container">
+
+        <div class="col-md-8">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+        {% block content %}{% endblock %}
+
+
+    </div>
+
+    <!-- Footer -->
+
+
+    <footer class="main-footer">
+
+        <div class="footer-top">
+
+        </div>
+
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container text-right">
+                FeedSeek @ copyrights 2020 - by <a href="http://www.ouarmedia.com" target="_blank">T3rm!na1-07</a>
+            </div>
+        </div>
+
+    </footer> <!-- main-footer -->
+
+
+
+
+
+
+
+
+
+    <!--  Scripts
+        ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static "website/js/jquery-1.11.1.min.js"%}"><\/script>')</script>
+
+    <!-- Bootsrap javascript file -->
+    <script src="{% static 'website/js/bootstrap.min.js'%}"></script>
+
+    <!-- owl carouseljavascript file -->
+    <script src="{% static 'website/js/owl.carousel.min.js'%}"></script>
+
+    <!-- Template main javascript -->
+    <script src="{% static 'website/js/main.js'%}"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+            (function (b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+                    function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+                e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+
+</body>
+
+</html>

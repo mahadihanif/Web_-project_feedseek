@@ -1,0 +1,115 @@
+{% extends 'pages/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}DONATE FOOD{% endblock title %}
+
+{% block content %}
+<div class="site-section bg-light">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-9" data-aos="fade">
+                <h2 class="font-weight-bold text-black">Posting as a donor</h2>
+                If you need food<a href="#"> <u style="color: red">Post as a Recipient</u></a>
+            </div>
+
+            <div class="col-md-12 col-lg-8 mb-5">
+
+
+
+                <form method="post" action="">
+
+                    {% csrf_token %}
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="foodname">Food name</label>
+                            <input type="text" id="foodname" name="foodname" class="form-control"
+                                placeholder="eg. Rice, Chicken">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="orgname">Organization/Restaurent name</label>
+                            <input type="text" id="orgname" name="orgname" class="form-control"
+                                placeholder="eg. Facebook, Inc.">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="no_of_people">For how many people (Approximate)</label>
+                            <input type="text" id="no_of_people" name="no_of_people" class="form-control"
+                                placeholder="eg. 150">
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="dateee">Select date (Maximum)
+                            </label>
+                            <input type="date" id="dateee" name="date" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- <div class="row form-group mb-4">
+                    <div class="col-md-12"><h3>Location</h3></div>
+                    <div class="col-md-12 mb-3 mb-md-0">
+                        
+                    <input type="text" class="form-control form-control-block search-input" id="autocomplete" name="address" placeholder="Location" onFocus="geolocate()">
+                    </div>
+                    </div> -->
+
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" for="info">Additional info (if any)
+                            </label>
+                            <textarea name="info" class="form-control" id="info" cols="30" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row form-group" style="float: right;">
+                        <div class="col-md-12">
+                            <input type="submit" value="Donate" class="btn btn-primary  py-2 px-5">
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="p-4 mb-3 bg-white">
+                    <h3 class="h5 text-black mb-3">Contact Info <a href="#"><i class="fas fa-pencil-alt" style="float: right;"></i></a></h3>
+
+                    <p class="mb-0 font-weight-bold">Address</p>
+                    
+                    <p class="mb-4">{{ user.profile.address }}</p>
+                    
+                    <a href="{% url 'profile' %}">Add Address</a>
+                    
+                    <p class="mb-0 font-weight-bold">Phone</p>
+                    
+                    <p class="mb-4"><a href="#">{{ user.profile.phone }}</a></p>
+                    
+                    
+                    <a href="{% url 'profile' %}">Add Phone</a>
+
+                    
+                    <p class="mb-0 font-weight-bold">Email Address</p>
+                    
+                    <p class="mb-4"><a href="#">{{ user.email }}</a></p>
+                    
+                    <a href="{% url 'profile' %}">Add Email</a>
+                    
+                 
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>{% endblock content %}
