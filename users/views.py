@@ -41,13 +41,9 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/profile_update.html', context)
      
 
-
-def donate_food(request):    
-    
-    p_form = Profile.objects.all()
-
-    
-    return render(request, 'donate_food.html', {'p_form':p_form})
+@login_required
+def profileView(request):
+    return render(request, 'users/profile.html')

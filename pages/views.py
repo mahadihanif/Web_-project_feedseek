@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from donate_post.models import Post
 
 # Create your views here.
 def index(request):
@@ -19,12 +19,16 @@ def gallery(request):
     return render(request, 'pages/gallery.html', {})
 
 
+
+# def home(request):
+#     return render(request, 'pages/home.html', {})
+
+
+
 @login_required
 def home(request):
-    return render(request, 'pages/home.html', {})
+    context = {
+        'posts': Post.objects.all()
+    }
+    return render(request, 'pages/home.html', context)
 
-
-
-# class PostListView(ListView):
-#     model = Post
-#     template_name = 'pages/home.htmml'

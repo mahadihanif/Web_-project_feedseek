@@ -1,0 +1,63 @@
+{% extends "pages/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8 mb-5">
+                    <div class="form-group">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Donate Food</legend>
+                                {{ form|crispy }}
+                            </fieldset>
+                            <div class="form-group">
+                                <button class="btn btn-outline-info" type="submit">Post</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-4 mb-3 bg-white">
+                        <legend class="border-bottom mb-4">Contact Info</legend>
+                        
+                        <p class="mb-0 font-weight-bold">Address</p>
+                        
+                        <p class="mb-4">{{ user.profile.address }}</p>
+                        
+                        <!-- <a href="{% url 'profile' %}">Add Address</a> -->
+                        
+                        <p class="mb-0 font-weight-bold">Phone</p>
+                        
+                        <p class="mb-4"><a href="#">{{ user.profile.phone }}</a></p>
+                        
+                        
+                        <!-- <a href="{% url 'profile' %}">Add Phone</a> -->
+            
+                        
+                        <p class="mb-0 font-weight-bold">Email Address</p>
+                        
+                        <p class="mb-4"><a href="#">{{ user.email }}</a></p>
+                        
+                        <!-- <a href="{% url 'profile' %}">Add Email</a> -->
+                        
+                     
+                    </div>
+            
+            
+                </div>
+                
+
+            </div>
+            
+
+            
+
+        </div>
+        
+    </div>
+    
+{% endblock content %}

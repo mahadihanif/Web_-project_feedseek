@@ -94,15 +94,6 @@
 
 </div><!-- /.carousel -->
 
-<div>
-  {% for post in object_list %}
-  <div class="post-entry">
-    <h2><a href="">{{ post.food_name }}</a></h2>
-    
-  </div>
-  {% endfor %}
-
-</div>
 
 <div class="section-home about-us fadeIn animated">
 
@@ -141,8 +132,7 @@
           <h3 class="col-title">Make donations</h3>
           <div class="col-details">
 
-            <p>Lorem ipsum dolor sit amet consect adipisscin elit proin vel lectus ut eta esami vera dolor sit amet
-              consect</p>
+            <p>Lorem ipsum dolor sit amet consect adipisscin elit proin vel lectus ut eta esami vera dolor sit amet consect</p>
 
           </div>
           <a href="#" class="btn btn-primary"> Read more </a>
@@ -312,84 +302,87 @@
 
 </div> <!-- /.our-sponsors -->
 
- <!-- Donate Modal -->
- <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel" aria-hidden="true">
+<!-- Donate Modal -->
+<div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel"
+  aria-hidden="true">
 
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="donateModalLabel">DONATE HERE</h4>
       </div>
       <div class="modal-body">
 
-            <form class="form-donation">
+        <form class="form-donation">
 
-                    <h3 class="title-style-1 text-center">Thank you for your donation <span class="title-under"></span>  </h3>
+          <h3 class="title-style-1 text-center">Thank you for your donation <span class="title-under"></span> </h3>
 
-                    <div class="row">
+          <div class="row">
 
-                        <div class="form-group col-md-12 ">
-                            <input type="text" class="form-control" id="foodName" placeholder="food name">
-                        </div>
+            <div class="form-group col-md-12 ">
+              <input type="text" class="form-control" id="foodName" placeholder="food name">
+            </div>
 
-                    </div>
-
-
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" name="OrganizationName" placeholder="organization name*">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" name="ForHowManyPeople" placeholder="for how many people*">
-                        </div>
-                    </div>
+          </div>
 
 
-                    <div class="row">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" name="OrganizationName" placeholder="organization name*">
+            </div>
 
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" name="ExpireDate" placeholder="Approx. expire date*">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" name="phone" placeholder="Phone">
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control" name="address" placeholder="Address / Location">
-                        </div>
-
-                    </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" name="ForHowManyPeople" placeholder="for how many people*">
+            </div>
+          </div>
 
 
-                    <div class="row">
+          <div class="row">
 
-                        <div class="form-group col-md-12">
-                            <textarea cols="30" rows="4" class="form-control" name="note" placeholder="Additional information"></textarea>
-                        </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" name="ExpireDate" placeholder="Approx. expire date*">
+            </div>
 
-                    </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" name="phone" placeholder="Phone">
+            </div>
 
-                    <div class="row">
+          </div>
 
-                        <div class="form-group col-md-12">
-                            <button type="submit" class="btn btn-primary pull-right" name="donateNow" >DONATE NOW</button>
-                        </div>
+          <div class="row">
 
-                    </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" name="address" placeholder="Address / Location">
+            </div>
+
+          </div>
+
+
+          <div class="row">
+
+            <div class="form-group col-md-12">
+              <textarea cols="30" rows="4" class="form-control" name="note"
+                placeholder="Additional information"></textarea>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="form-group col-md-12">
+              <button type="submit" class="btn btn-primary pull-right" name="donateNow">DONATE NOW</button>
+            </div>
+
+          </div>
 
 
 
-                   
-                
-            </form>
-        
+
+
+        </form>
+
       </div>
     </div>
   </div>

@@ -13,12 +13,13 @@
     <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Bootsrap -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css'%}">
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css'%}">
+
+    <!-- PrettyPhoto -->
+    <link rel="stylesheet" href="{% static 'website/css/prettyPhoto.css'%}">
 
     <!-- Owl carousel -->
     <link rel="stylesheet" href="{% static 'website/css/owl.carousel.css'%}">
@@ -107,7 +108,7 @@
 
                             <li><a href="{% url 'gallery'%}">GALLERY</a></li>
                             <li><a href="{% url 'contact'%}">CONTACT</a></li>
-                            <li><a href="{% url 'contact'%}">DONATE</a></li>
+                            <li><a href="{% url 'post-create' %}">DONATE</a></li>
 
                             {% else %}
 
@@ -116,7 +117,7 @@
 
                             <li><a href="{% url 'gallery'%}">GALLERY</a></li>
                             <li><a href="{% url 'contact'%}">CONTACT</a></li>
-                            <li><a href="{% url 'contact'%}">DONATE</a></li>
+                            <li><a href="{% url 'post-create' %}">DONATE</a></li>
                             {% endif %}
                         </ul>
 
@@ -127,7 +128,7 @@
 
                             {% if user.is_authenticated %}
                             <li class="has-child"><a href="#">
-                            <li>{{ user.username }}</a>
+                            {{ user.username }}</a>
 
                                 <ul class="submenu">
                                     <li class="submenu-item"><a href="{% url 'profile' %}">Profile</a></li>
@@ -137,7 +138,7 @@
 
                             </li>
                             <li><a class="navbar-brand">|</a></li>
-                            <li><a href="{% url 'donate_food' %}">DONATE</a></li>
+                            <li><a href="{% url 'post-create' %}">DONATE</a></li>
                             {% else %}</li>
 
                             <li><a href="{% url 'login' %}">LOG IN</a></li>
@@ -174,7 +175,10 @@
             {% endif %}
 
         </div>
+        
         {% block content %}{% endblock %}
+        
+        
 
 
     </div>
@@ -194,7 +198,7 @@
         <div class="footer-bottom">
 
             <div class="container text-right">
-                FeedSeek @ copyrights 2020 - by <a href="http://www.ouarmedia.com" target="_blank">T3rm!na1-07</a>
+                FeedSeek @ copyrights 2020 - by <a href="#" target="_blank">T3rm!na1-07</a>
             </div>
         </div>
 
@@ -224,8 +228,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{% static "website/js/jquery-1.11.1.min.js"%}"><\/script>')</script>
 
+
     <!-- Bootsrap javascript file -->
     <script src="{% static 'website/js/bootstrap.min.js'%}"></script>
+
+    <!-- Google map  -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places" type="text/javascript"></script>
 
     <!-- owl carouseljavascript file -->
     <script src="{% static 'website/js/owl.carousel.min.js'%}"></script>
@@ -244,6 +252,17 @@
             }(window, document, 'script', 'ga'));
         ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
     </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 

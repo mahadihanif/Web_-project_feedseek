@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'users.apps.UsersConfig',
+    'donate_food.apps.DonateFoodConfig',
+    'donate_post.apps.DonatePostConfig',
     'crispy_forms',
     'phonenumber_field',
     'pages.apps.PagesConfig',

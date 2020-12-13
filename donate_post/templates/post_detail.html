@@ -1,0 +1,111 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<article class="media content-section">
+    <img class="rounded-circle article-img" style="border-radius: 50%;" src="{{ object.author.profile.image.url }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.author }}</a>
+            <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+
+        </div>
+
+    </div>
+</article>
+
+<div class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8 mb-5">
+                <div class="personal_text">
+                    <legend class="border-bottom mb-4" >Donor post details</legend>
+                    <h6 style="color: black;">Food Name:</h6>
+                    <h4>{{ object.food_name }}</h4>
+                    <hr>
+
+                    <h6 style="color: black;">Organization:</h6>
+                    <h4>{{ object.organization_name }}</h4>
+                    <hr>
+
+                    <h6 style="color: black;">For how many people:</h6>
+                    <h4>{{ object.how_many_people }}</h4>
+                    <hr>
+
+                    <h6 style="color: black;">Location</h6>
+                    <h4>{{ object.location }}</h4>
+                    <hr>
+
+                    <h6 style="color: black;">Additional info:</h6>
+                    <h4>{{ object.add_note }}</h4>
+                    <hr>
+
+
+                </div>
+
+                {% if object.author == user %}
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                </div>
+                {% else %}
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Make Request
+                        for
+                        Recive</a>
+                </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="col-lg-4">
+                <div class="p-4 mb-3 bg-white">
+                    <div class="personal_text">
+                        <legend class="border-bottom mb-4">Donor Info</legend>
+                        <h6 style="color: black;">Name:</h6>
+                        <h4>{{ object.author.profile.full_name }}</h4>
+                        <hr>
+
+                        <h6 style="color: black;">Sex:</h6>
+                        <h4>{{ object.author.profile.sex }}</h4>
+                        <hr>
+                        
+                        <h6 style="color: black;">Age:</h6>
+                        <h4>{{ object.author.profile.age }}</h4>
+                        <hr>
+
+                        <h6 style="color: black;">Email :</h6>
+                        <h4>{{ object.author.email }}</h4>
+                        <hr>
+
+                        <h6 style="color: black;">Cell-Phone No.:</h6>
+                        <h4>{{ object.author.profile.phone }}</h4>
+                        <hr>
+
+                        <h6 style="color: black;">Address:</h6>
+                        <h4>{{ object.author.profile.address }}</h4>
+                        <hr>
+
+                    </div>
+                    <!-- {% if object.author != user %}
+                    <div>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'profile'%}">View Profile</a>
+                    </div>
+                    {% endif %} -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock content %}
